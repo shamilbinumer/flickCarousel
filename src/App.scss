@@ -1,0 +1,151 @@
+.background-image-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-image {
+  filter: brightness(40%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.background-image.animate {
+  animation: fadeAnimation 1.5s infinite alternate; /* Adjust timing as needed */
+}
+
+@keyframes fadeAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.overlay {
+  // animation: fadeInFromTop 2s ease forwards;
+  z-index: 1000;
+  color: white;
+  animation-delay: 1.2s; 
+  position: absolute;
+  opacity: 1;
+  top: 20%;
+  left: 10%;
+  padding-top: 130px;
+}
+.overlay-animate {
+  opacity: 0.5;
+  animation: fadeInFromTop 0.9s ease forwards;
+}
+
+/* Content animations */
+.overlay h2 {
+      font-size: 50px;
+      animation: fadeInFromTop 1s ease forwards; 
+      opacity: 0; 
+      animation-delay: 0.5s;
+}
+.texth2{
+  opacity: 0.5;
+  animation: fadeInFromTop 0.9s ease forwards;
+}
+.textp{
+  opacity: 0.5;
+  animation: fadeInFromBottom .9s ease forwards; 
+}
+
+.overlay p {
+  font-size: 20px;
+  width: 60%;
+  // background-color: red;
+  animation: fadeInFromBottom 1s ease forwards; /* Define the fade-in animation for p */
+  opacity: 0; /* Initially set opacity to 0 */
+  animation-delay: 0.5s; /* Delay the animation for the p */
+}
+
+
+/* Animations for heading and paragraph */
+@keyframes fadeInOverlay {
+  from {
+      opacity: 0; /* Start opacity from 0 */
+  }
+  to {
+      opacity: 1; /* Fade in to full opacity */
+  }
+}
+@keyframes fadeInFromTop {
+  from {
+      opacity: 0;
+      transform: translateY(-190px); /* Move up by 50px */
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0); /* Fade in at original position */
+  }
+}
+
+@keyframes fadeInFromBottom {
+  from {
+      opacity: 0;
+      transform: translateY(50px); /* Move down by 50px */
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0); /* Fade in at original position */
+  }
+}
+.thubnail-main {
+  /* background-color: yellow; */
+  padding: 20px;
+  padding-top: 10%;
+  width: 36%;
+  margin-left: auto;
+  overflow: hidden;
+}
+
+.img {
+  /* background-color: red; */
+  margin-top: 90%;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.thumbnails {
+  /* width: ; */
+  height: 300px;
+  width: 100%;
+  /* background-color: green; */
+  margin: auto;
+}
+
+.thumbnails img {
+  width: 100%;
+  /* position: relative; */
+  height: 200px;
+  border-radius: 6px;
+}
+
+.slick-current img {
+  /* height: 22rem; */
+  border: 4px solid yellow;
+  transform: scale(1.2);
+  transition: 1.4s;
+  border-radius: 5px;
+}
+
+.slick-initialized .slick-slide {
+  padding-left: 0.4rem !important;
+}
+
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
